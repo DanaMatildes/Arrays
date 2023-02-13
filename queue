@@ -1,0 +1,29 @@
+package colas.stacks;
+
+public class MyQueue {
+	char[] queue;
+	int MAX;
+	int tail=MAX;
+	
+	
+	public char delete(char data) {
+		if(tail==0) {
+			return('#');
+		}
+		else {
+			queue[0]=data;
+			return(data);
+			
+			for(int i=1; i<tail; i++) {
+				queue[i]= queue[i+1];
+			}
+		}
+	}
+
+	public char añadeYElimina(char data) {
+		
+		
+	}
+	
+	
+}
