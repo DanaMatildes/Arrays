@@ -1,0 +1,22 @@
+package colas.stacks;
+
+public class MyStack {
+	char[]stack;
+	int top=0;
+	int MAX;
+	
+	public char pop (char data) {
+		if(top == MAX) {
+			System.out.println("Stack is empty");
+			stack[top]=data;
+			return(data);
+			}
+		else {
+				stack[top]=data;
+				top--;
+				return(data);
+			}
+		}
+	}
+
+
