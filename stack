@@ -1,22 +1,53 @@
-package colas.stacks;
+package queuesYarrays;
+import java.util.Scanner;
 
 public class MyStack {
-	char[]stack;
-	int top=0;
+	
+	int top;
 	int MAX;
 	
-	public char pop (char data) {
-		if(top == MAX) {
-			System.out.println("Stack is empty");
-			stack[top]=data;
-			return(data);
-			}
-		else {
-				stack[top]=data;
-				top--;
-				return(data);
-			}
-		}
+	Scanner ss = new Scanner (System.in);
+	
+	//metodo para rellenar el array
+	public char[] rellenarArray() {
+		char[] stack= new char[3];
+		stack[0]='a';
+		stack[1]='b';
+		stack[2]='c';
+		return stack;
 	}
+	
+	 public void imprimirArray (char lista[]){
+	        for(int i=0;i<lista.length;i++){
+	            System.out.println(lista[i]);
+	        }
+	    }
+	 
+	 public char pop(char pila[]) {
+		 top=pila.length;
+		 if(top==0) {
+		 System.out.print("Stack is empty");
+		 return ('0');
+		 }else {
+			 char eliminado= pila[top-1];
+			 top--;
+			 return (eliminado);
+		 }
 
+	 }
+	 
+	 
+	 public char[] modificarStack(char pila[]) {
+		 top=pila.length;
+		 System.out.println("Método para introducir o eliminar elementos de un stack");
+		 System.out.println("Escriba 'i' para introducir o 'e' para eliminar un elemento");
+		 String d = ss.nextLine();
+		 char decision = d.charAt(0);
+		 if(decision=='i') {
+			 if()
+		 }
+	 }
+	
+	
 
+}
