@@ -1,29 +1,69 @@
-package colas.stacks;
+package queuesYarrays;
+import java.util.Scanner;
 
 public class MyQueue {
-	char[] queue;
-	int MAX;
-	int tail=MAX;
-	
-	
-	public char delete(char data) {
-		if(tail==0) {
-			return('#');
-		}
-		else {
-			queue[0]=data;
-			return(data);
-			
-			for(int i=1; i<tail; i++) {
-				queue[i]= queue[i+1];
-			}
-		}
-	}
 
-	public char añadeYElimina(char data) {
+	int MAX;
+	int tail;
+	int decision;
+	String elem;
+
+	
+	Scanner sc = new Scanner (System.in);
+	Scanner ss = new Scanner (System.in);
+	
+	public char[] rellenarCola() {
+		char[] queue= new char[3];
+		queue[0]='g';
+		queue[1]='h';
+		queue[2]='i';
+		return queue;
+	}
 		
-		
+	public char delete(char pila[]) {
+		tail=pila.length;
+		if(tail==0) {
+			System.out.println("Queue is empty");
+			return('#');
+		}else {
+			char eliminado=pila[0];
+			pila[0]=pila[1];
+			System.out.print("Elemento eliminado: " + eliminado);
+			return(eliminado);
+		}
 	}
 	
 	
-}
+	//Método para eliminar el primer elemento 0, y agregar uno nuevo al final de la cola
+	public char[] añadirElementos(char cola[]) {
+		do {
+			tail=cola.length;
+			System.out.println("\n¿Qué elemento char desea agregar?: ");
+			elem = ss.nextLine();
+			char elemNuevo = elem.charAt(0); //elemento a agregar
+			
+			for(int i=0; i<tail-1; i++) {
+				cola[i]=cola[i+1];
+			} //recorrer los elementos del arreglo
+			
+			cola[tail-1]=elemNuevo; //agrega el elemento a la cola
+			
+			System.out.print("Queue nueva: \n");
+			for(int i=0; i<tail; i++) {
+				System.out.println(cola[i]);
+			}
+		
+		System.out.println("¿Desea agregar otro elemento a la fila? Escriba '1' para 'si': ");
+		decision = sc.nextInt();
+		}while(decision==1);
+		
+		if(decision!=1) {
+			System.out.print("Saliendo");
+			System.exit(0);
+		}
+	return (cola);	
+	
+	}
+	
+	
+	}
