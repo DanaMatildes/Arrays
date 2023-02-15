@@ -1,0 +1,30 @@
+package queuesYarrays;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MainQA {
+	
+	public static void main(String[]args) {
+		
+		MyStack nuevoStack = new MyStack();
+		
+		char[] miStack = nuevoStack.rellenarArray();
+		nuevoStack.imprimirArray(miStack);
+		nuevoStack.pop(miStack);
+		
+		MyQueue nuevoQueue = new MyQueue();
+		
+		char[] miCola = nuevoQueue.rellenarCola();
+		nuevoQueue.delete(miCola);
+		nuevoQueue.añadirElementos(miCola);
+	
+		
+		
+		
+		
+	}
+
+
+	
+	
+}
