@@ -1,8 +1,7 @@
-package queuesYarrays;
+package queuesAndStacks;
 import java.util.Scanner;
 
 public class MyStack {
-	
 	int top;
 	int MAX;
 	
@@ -23,7 +22,7 @@ public class MyStack {
 	        }
 	    }
 	 
-	 public char pop(char pila[]) {
+	 public char pop() { //regresa pero no recibe
 		 top=pila.length;
 		 if(top==0) {
 		 System.out.print("Stack is empty");
@@ -36,6 +35,10 @@ public class MyStack {
 
 	 }
 	 
+	 public void push (char)//regresa y recibe
+	 
+	 //en el main crear stack y darle el valor del stack "cad.length"
+	 
 	 
 	 public char[] modificarStack(char pila[]) {
 		 top=pila.length;
@@ -47,7 +50,5 @@ public class MyStack {
 			 if()
 		 }
 	 }
-	
-	
 
 }
