@@ -1,8 +1,8 @@
-package queuesYarrays;
+package queuesAndStacks;
 import java.util.Scanner;
 
 public class MyQueue {
-
+	
 	int MAX;
 	int tail;
 	int decision;
@@ -64,6 +64,6 @@ public class MyQueue {
 	return (cola);	
 	
 	}
-	
-	
-	}
+
+}
+
