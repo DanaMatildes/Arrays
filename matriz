@@ -1,0 +1,72 @@
+package matrices;
+
+public class Matriz {
+
+
+	int[][] matriz2 = new int [3][2];
+	
+	public int[][] rellenaMatriz1() {
+		int[][]matriz1= new int[3][2];
+		matriz1[0][0]= 3;
+		matriz1[0][1]= 2;
+		matriz1[1][0]= 5;
+		matriz1[1][1]= 6;
+		matriz1[2][0]= 9;
+		matriz1[2][1]= 7;
+		return(matriz1);
+	}
+	
+	public int[][] rellenaMatriz2() {
+		int[][]matriz1= new int[3][2];
+		matriz1[0][0]= 5;
+		matriz1[0][1]= 4;
+		matriz1[1][0]= 9;
+		matriz1[1][1]= 8;
+		matriz1[2][0]= 1;
+		matriz1[2][1]= 3;
+		return(matriz1);
+	}
+	
+	
+	public void imprime(int[][] matriz) {
+		int filas= matriz.length;
+		int columnas = matriz[0]. length;
+		System.out.println("Filas: " + filas + "Columnas: " + columnas);
+		for(int i=0; i<filas; i++) {
+			for(int j=0; j<columnas; j++) {
+				System.out.print("\t" + matriz[i][j]);
+			}
+		}
+	}
+	
+	public int[][] sumarMatrices(int[][]matriz1, int[][]matriz2){
+		
+		int filas1 = matriz1.length;
+		int columnas1 = matriz1[0].length;
+		
+		int filas2 = matriz2.length;
+		int columnas2 = matriz2[0].length;
+		
+		int[][]matrizSuma = new int[filas1][columnas1];
+		
+		if(filas1!= filas2) {
+			System.out.println("Las matrices no son del mismo tamaño. Saliendo");
+			System.exit(0);
+		}else if(columnas1!= columnas2) {
+			System.out.println("Las matrices no son del mismo tamaño. Saliendo");
+			System.exit(0);
+		}else {
+			
+			for(int i=0; i<filas1; i++) {
+				for(int j=0; j<columnas1; j++) {
+					matrizSuma[i][j] = matriz1[i][j] + matriz2[i][j];
+				}
+			}
+		}
+		return(matrizSuma);
+	}
+	
+	
+	
+	
+}
