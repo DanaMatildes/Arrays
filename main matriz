@@ -1,0 +1,16 @@
+package matrices;
+
+public class Main {
+	public static void main(String[]args) {
+		
+		Matriz matriz = new Matriz();
+		
+		int[][] miMatriz = matriz.rellenaMatriz1();
+		int[][] miMatriz2 = matriz.rellenaMatriz2();
+		
+		int[][] miMatSumada= matriz.sumarMatrices(miMatriz, miMatriz2);
+		matriz.imprime(miMatSumada);
+	
+	}
+
+}
