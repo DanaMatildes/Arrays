@@ -1,12 +1,14 @@
-package queuesAndStacks;
+package queuesYarrays;
 import java.util.Scanner;
 
 public class MyStack {
+
 	int top;
 	int MAX;
-	
+	char[]fila;
+
 	Scanner ss = new Scanner (System.in);
-	
+
 	//metodo para rellenar el array
 	public char[] rellenarArray() {
 		char[] stack= new char[3];
@@ -15,14 +17,14 @@ public class MyStack {
 		stack[2]='c';
 		return stack;
 	}
-	
+
 	 public void imprimirArray (char lista[]){
 	        for(int i=0;i<lista.length;i++){
 	            System.out.println(lista[i]);
 	        }
 	    }
-	 
-	 public char pop() { //regresa pero no recibe
+
+	 public char pop(char pila[]) {
 		 top=pila.length;
 		 if(top==0) {
 		 System.out.print("Stack is empty");
@@ -30,16 +32,14 @@ public class MyStack {
 		 }else {
 			 char eliminado= pila[top-1];
 			 top--;
+			 System.out.println("El char eliminado es: " + eliminado);
+			 System.out.println("Top ahora vale: " + top); 
 			 return (eliminado);
 		 }
 
 	 }
-	 
-	 public void push (char)//regresa y recibe
-	 
-	 //en el main crear stack y darle el valor del stack "cad.length"
-	 
-	 
+
+
 	 public char[] modificarStack(char pila[]) {
 		 top=pila.length;
 		 System.out.println("Método para introducir o eliminar elementos de un stack");
@@ -47,8 +47,56 @@ public class MyStack {
 		 String d = ss.nextLine();
 		 char decision = d.charAt(0);
 		 if(decision=='i') {
-			 if()
+			 System.out.println("¿Qué caracter desea agregar?");
+			 String a = ss.nextLine();
+			 char agrega = a.charAt(0);
+			 pila[top]= agrega;   
 		 }
+		 
+		 else if(decision=='e') {
+			 if(top==0) {
+				 System.out.print("Stack is empty");
+			 }else {
+				 char eliminado= pila[top-1];
+				 top--;
+				 System.out.println("El char eliminado es: " + eliminado);
+				 System.out.println("Top ahora vale: " + top); 
+			 }
+        }
+		 for(int i=0;i<pila.length;i++){
+	            System.out.println(pila[i]);}
+		 
+		return(pila);
+		
 	 }
+	 
+	
+	 public void push(char value) {
+			
+			if(top == MAX) {
+				System.out.println("valor fuera de arreglo :(");
+				return;
+			}
+			
+			fila[top] = value;
+			top++;
+		}
+	 
+	 
+	 public String invertirCadena(String palabra) {
+		 MyStack miStackI = new MyStack();
+		 char[] stackOriginal = new char[palabra.length()];
+		 char[] stackInver = new char[palabra.length()];
+		 for(int i=0; i<palabra.length(); i++) {
+			 stackOriginal[i] = palabra.charAt(i);
+		 }
+		 for(int j=0; j<palabra.length(); j++) {
+			 stackInver[j] = miStackI.pop(stackOriginal);
+		 }
+		String newString = String.valueOf(stackInver);
+		return(newString);
+	 }
+
+	
 
 }
