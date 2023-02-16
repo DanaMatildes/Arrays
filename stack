@@ -74,7 +74,7 @@ public class MyStack {
 	 public void push(char value) {
 			
 			if(top == MAX) {
-				System.out.println("valor fuera de arreglo :(");
+				System.out.println("Stack full");
 				return;
 			}
 			
